@@ -1,0 +1,18 @@
+<div class="project-card">
+  <h3>{{ include.project.title }}</h3>
+  <p>{{ include.project.description }}</p>
+  <div class="project-tags">
+    {% for tag in include.project.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <div class="project-links">
+    {% if include.project.github %}
+      <a href="{{ include.project.github }}" target="_blank" rel="noopener">Source</a>
+    {% endif %}
+    {% if include.project.live and include.project.live != "" %}
+      <a href="{{ include.project.live }}" target="_blank" rel="noopener">Live</a>
+    {% endif %}
+    <a href="{{ include.project.url | relative_url }}">Details &rarr;</a>
+  </div>
+</div>

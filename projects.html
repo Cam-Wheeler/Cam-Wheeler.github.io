@@ -1,0 +1,15 @@
+---
+layout: default
+title: Projects
+---
+
+<section class="page-content">
+  <div class="container">
+    <h2>All Projects</h2>
+    <div class="projects-grid">
+      {% for proj in site.projects %}
+        {% include project-card.html project=proj %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

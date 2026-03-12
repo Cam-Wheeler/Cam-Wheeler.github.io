@@ -1,0 +1,18 @@
+<div class="paper-card">
+  <div>
+    <span class="status-badge {{ include.paper.status }}">{{ include.paper.status }}</span>
+  </div>
+  <h3>{{ include.paper.title }}</h3>
+  <p class="paper-meta">{{ include.paper.authors }} &middot; {{ include.paper.venue }} {{ include.paper.year }}</p>
+  <div class="project-tags">
+    {% for tag in include.paper.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <div class="paper-links">
+    {% if include.paper.link %}
+      <a href="{{ include.paper.link }}" target="_blank" rel="noopener">Paper</a>
+    {% endif %}
+    <a href="{{ include.paper.url | relative_url }}">Notes &rarr;</a>
+  </div>
+</div>

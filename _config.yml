@@ -1,0 +1,45 @@
+title: Cam Wheeler
+description: "PhD Student at The University of Edinburgh"
+url: "https://cam-wheeler.github.io"
+baseurl: ""
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  papers:
+    output: true
+    permalink: /reading/:name/
+  writing:
+    output: true
+    permalink: /writing/:name/
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "writing"
+    values:
+      layout: "default"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

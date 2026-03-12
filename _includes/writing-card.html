@@ -1,0 +1,16 @@
+<div class="project-card">
+  <div>
+    <span class="tag">{{ include.piece.type }}</span>
+    {% if include.piece.status %}<span class="status-badge {{ include.piece.status }}">{{ include.piece.status }}</span>{% endif %}
+  </div>
+  <h3>{{ include.piece.title }}</h3>
+  <p class="paper-meta">{{ include.piece.date | date: "%B %Y" }}{% if include.piece.venue %} &middot; {{ include.piece.venue }}{% endif %}</p>
+  <div class="project-tags">
+    {% for tag in include.piece.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <div class="project-links">
+    <a href="{{ include.piece.url | relative_url }}">Read &rarr;</a>
+  </div>
+</div>

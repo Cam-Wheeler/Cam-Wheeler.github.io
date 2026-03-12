@@ -1,0 +1,16 @@
+---
+layout: default
+title: Reading
+---
+
+<section class="page-content">
+  <div class="container">
+    <h2>Reading List</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Papers I'm reading, have read, or plan to read — with notes and discussion.</p>
+    <div class="projects-grid">
+      {% for paper in site.papers %}
+        {% include paper-card.html paper=paper %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
