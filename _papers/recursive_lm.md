@@ -1,7 +1,7 @@
 ---
 title: "Recursive Language Models"
 authors: "Zhang et al"
-year: 2019
+year: 2025
 venue: "arXiv"
 link: "https://arxiv.org/abs/2512.24601"
 tags: [LLMs, Inference-Time Scaling, Large contexts]
