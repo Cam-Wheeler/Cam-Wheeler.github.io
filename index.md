@@ -69,10 +69,9 @@ title: Home
   <div class="container">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project-card">
-        <h3>Under Construction</h3>
-        <p>This section is currently being built. Check back soon!</p>
-      </div>
+      {% for proj in site.projects %}
+        {% include project-card.html project=proj %}
+      {% endfor %}
     </div>
   </div>
 </section>
