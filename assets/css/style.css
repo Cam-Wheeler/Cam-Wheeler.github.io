@@ -320,6 +320,7 @@ h3 { font-size: 1.25rem; }
 .status-badge.reading { background: rgba(181, 101, 43, 0.25); color: var(--brown); }
 .status-badge.to-read { background: rgba(124, 122, 72, 0.25); color: var(--khaki); }
 .status-badge.accepted { background: rgba(91, 107, 46, 0.25); color: #8a9e44; }
+.status-badge.under-construction { background: rgba(200, 160, 0, 0.25); color: #c8a000; }
 
 /* ===== Footer ===== */
 .site-footer {
