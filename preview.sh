@@ -4,4 +4,4 @@ set -e
 cd "$(dirname "$0")"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 bundle install --quiet
-bundle exec jekyll serve --livereload "$@"
+bundle exec jekyll serve --livereload --unpublished "$@"

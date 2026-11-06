@@ -1,0 +1,20 @@
+{% assign parts = site.writing | where: "series", include.series.slug | sort: "part" %}
+<div class="project-card">
+  <div>
+    <span class="tag">series</span>
+    <span class="paper-meta">{{ parts.size }} part{% if parts.size != 1 %}s{% endif %}</span>
+  </div>
+  <h3>{{ include.series.title }}</h3>
+  <p>{{ include.series.description }}</p>
+  <div class="project-tags">
+    {% for tag in include.series.tags %}
+      <span class="tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  <div class="project-links">
+    {% if include.series.github %}
+      <a href="{{ include.series.github }}" target="_blank" rel="noopener">Source</a>
+    {% endif %}
+    <a href="{{ include.series.url | relative_url }}">Read the series &rarr;</a>
+  </div>
+</div>

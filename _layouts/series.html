@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign parts = site.writing | where: "series", page.slug | sort: "part" %}
+<section class="page-content">
+  <div class="container">
+    <p class="series-kicker">Series &middot; {{ parts.size }} part{% if parts.size != 1 %}s{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="tagline">{{ page.description }}</p>
+    {% if page.github %}<p><a href="{{ page.github }}" target="_blank" rel="noopener">Source on GitHub &rarr;</a></p>{% endif %}
+
+    {{ content }}
+
+    <ol class="series-list">
+      {% for part in parts %}
+        <li>
+          <span class="series-num">{{ part.part }}</span>
+          <div>
+            <a href="{{ part.url | relative_url }}">{{ part.title }}</a>
+            <p>{{ part.description }}</p>
+            <span class="paper-meta">{{ part.date | date: "%B %Y" }}</span>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

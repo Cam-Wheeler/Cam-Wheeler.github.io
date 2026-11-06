@@ -420,3 +420,73 @@ h3 { font-size: 1.25rem; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Series ===== */
+.series-kicker {
+  color: var(--kraft);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.series-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.series-list li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.series-list li:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.series-num {
+  color: var(--book-cloth);
+  font-weight: 700;
+  min-width: 2ch;
+}
+
+.series-list a {
+  font-weight: 700;
+}
+
+.series-list p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.series-header {
+  padding-top: 5.5rem;
+  margin-bottom: -5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.series-header .container {
+  max-width: 720px;
+}
+
+.series-nav {
+  padding: 2rem 0 4rem;
+  font-size: 0.875rem;
+}
+
+.series-nav .container {
+  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.series-nav .series-next {
+  text-align: right;
+}

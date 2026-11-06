@@ -80,8 +80,13 @@ title: Home
   <div class="container">
     <h2>Things I've Written</h2>
     <div class="projects-grid">
+      {% for s in site.series %}
+        {% include series-card.html series=s %}
+      {% endfor %}
       {% for piece in site.writing %}
-        {% include writing-card.html piece=piece %}
+        {% unless piece.series %}
+          {% include writing-card.html piece=piece %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
