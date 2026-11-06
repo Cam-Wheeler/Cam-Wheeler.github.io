@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{% if page.series %}
+  {% assign series = site.series | where: "slug", page.series | first %}
+  {% assign parts = site.writing | where: "series", page.series | sort: "part" %}
+  {% assign prev = nil %}{% assign next = nil %}{% assign found = false %}
+  {% for p in parts %}
+    {% if found and next == nil %}{% assign next = p %}{% endif %}
+    {% if p.url == page.url %}{% assign found = true %}{% endif %}
+    {% unless found %}{% assign prev = p %}{% endunless %}
+  {% endfor %}
+  <div class="series-header">
+    <div class="container">
+      <a href="{{ series.url | relative_url }}">{{ series.title }}</a> &middot; part {{ page.part }} of {{ parts.size }}
+    </div>
+  </div>
+{% endif %}
+
+{{ content }}
+
+{% if page.series %}
+  <nav class="series-nav">
+    <div class="container">
+      {% if prev %}<a class="series-prev" href="{{ prev.url | relative_url }}">&larr; {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+      <a href="{{ series.url | relative_url }}">All parts</a>
+      {% if next %}<a class="series-next" href="{{ next.url | relative_url }}">{{ next.title }} &rarr;</a>{% else %}<span></span>{% endif %}
+    </div>
+  </nav>
+{% endif %}

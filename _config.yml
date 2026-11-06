@@ -14,6 +14,9 @@ collections:
   writing:
     output: true
     permalink: /writing/:name/
+  series:
+    output: true
+    permalink: /series/:name/
 
 # Build settings
 markdown: kramdown
@@ -35,7 +38,12 @@ defaults:
       path: ""
       type: "writing"
     values:
-      layout: "default"
+      layout: "post"
+  - scope:
+      path: ""
+      type: "series"
+    values:
+      layout: "series"
 
 # Exclude from build
 exclude:
