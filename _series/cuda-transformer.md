@@ -1,7 +1,7 @@
 ---
 title: "CUDA Transformer"
 description: "Building and training a Qwen-style transformer, then rewriting its hot paths in raw CUDA and optimising the GEMMs step by step."
-github: "https://github.com/Cam-Wheeler/"
+github: "https://github.com/Cam-Wheeler/cuda_transformer"
 tags: [CUDA, PyTorch, GEMM, Performance]
 ---
 

@@ -1,7 +1,7 @@
 {% assign parts = site.writing | where: "series", include.series.slug | sort: "part" %}
 <div class="project-card">
   <div>
-    <span class="tag">series</span>
+    <span class="tag">project</span>
     <span class="paper-meta">{{ parts.size }} part{% if parts.size != 1 %}s{% endif %}</span>
   </div>
   <h3>{{ include.series.title }}</h3>
