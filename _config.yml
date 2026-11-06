@@ -40,6 +40,5 @@ defaults:
 # Exclude from build
 exclude:
   - Gemfile
-  - Gemfile.lock
   - README.md
   - vendor
