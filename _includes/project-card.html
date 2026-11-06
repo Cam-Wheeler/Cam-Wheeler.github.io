@@ -13,6 +13,10 @@
     {% if include.project.live and include.project.live != "" %}
       <a href="{{ include.project.live }}" target="_blank" rel="noopener">Live</a>
     {% endif %}
-    <a href="{{ include.project.url | relative_url }}">Details &rarr;</a>
+    {% if include.project.series %}
+      <a href="{{ '/series/' | append: include.project.series | append: '/' | relative_url }}">Write-up &rarr;</a>
+    {% else %}
+      <a href="{{ include.project.url | relative_url }}">Details &rarr;</a>
+    {% endif %}
   </div>
 </div>

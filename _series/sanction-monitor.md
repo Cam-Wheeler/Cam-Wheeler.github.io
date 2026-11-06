@@ -5,4 +5,4 @@ github: "https://github.com/Cam-Wheeler/Sanction_Monitor"
 tags: [Kafka, Flink, Java, Rust, Streaming]
 ---
 
-The [project page](/projects/sanction-monitor/) gives the overview. These posts go into the individual pieces in detail.
+Start with the system overview for the architecture and the reasoning behind Kafka and Flink. Later parts dig into the Kubernetes and Terraform layers in detail.
