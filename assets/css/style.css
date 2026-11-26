@@ -23,6 +23,8 @@
   --bg-tertiary: #2E2E2C;
   --text-primary: var(--ivory-light);
   --text-secondary: var(--cloud-light);
+  /* Colour of all running text (paragraphs, lists, tables). Headings stay --text-primary. */
+  --text-body: var(--text-secondary);
   --accent: var(--book-cloth);
   --accent-hover: var(--kraft);
   --border: var(--slate-light);
@@ -61,6 +63,11 @@ a:hover {
 
 ul {
   list-style: none;
+}
+
+/* One colour for running text everywhere on the site */
+p, li, td, blockquote, figcaption {
+  color: var(--text-body);
 }
 
 img {
@@ -330,6 +337,12 @@ h3 { font-size: 1.25rem; }
 .status-badge.accepted { background: rgba(120, 140, 93, 0.25); color: var(--olive); }
 .status-badge.under-construction { background: rgba(235, 219, 188, 0.25); color: var(--manilla); }
 
+/* Badge row at the top of a card (type tag, status, part count) */
+.project-card > div:first-child,
+.paper-card > div:first-child {
+  margin-bottom: 0.75rem;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   background: var(--bg-secondary);
@@ -366,19 +379,120 @@ h3 { font-size: 1.25rem; }
 /* ===== Page Content (for project/paper detail pages) ===== */
 .page-content {
   padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+/* A post inside a series ends with the series nav, which has its own spacing */
+.page-content:has(+ .series-nav) {
+  padding-bottom: 0;
 }
 
 .page-content .container {
   max-width: 720px;
 }
 
-.page-content p {
+/* ===== Prose (markdown content inside .page-content) =====
+   :where() keeps these at element-level specificity, so any component
+   class (.project-card, .paper-meta, .series-list, ...) overrides them. */
+:where(.page-content) p,
+:where(.page-content) ul,
+:where(.page-content) ol,
+:where(.page-content) pre,
+:where(.page-content) blockquote,
+:where(.page-content) table {
   margin-bottom: 1rem;
-  color: var(--text-secondary);
 }
 
-.page-content h2 {
+:where(.page-content) h2 {
   margin-top: 2rem;
+}
+
+:where(.page-content) h3 {
+  margin: 1.75rem 0 0.75rem;
+}
+
+:where(.page-content) h4 {
+  margin: 1.5rem 0 0.5rem;
+}
+
+:where(.page-content) ul,
+:where(.page-content) ol {
+  padding-left: 3ch;
+}
+
+:where(.page-content) ul {
+  list-style: disc;
+}
+
+:where(.page-content) li {
+  margin-bottom: 0.5rem;
+}
+
+:where(.page-content) li > ul,
+:where(.page-content) li > ol {
+  margin: 0.5rem 0 0;
+}
+
+:where(.page-content) img {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+}
+
+:where(.page-content) code {
+  font-family: var(--font);
+  font-size: 0.875em;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+:where(.page-content) pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+:where(.page-content) pre code {
+  font-size: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+:where(.page-content) blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+:where(.page-content) table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+:where(.page-content) th,
+:where(.page-content) td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+:where(.page-content) th {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+:where(.page-content) hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
 }
 
 /* ===== Responsive ===== */
@@ -433,11 +547,13 @@ h3 { font-size: 1.25rem; }
 .series-list {
   list-style: none;
   margin-top: 2rem;
+  padding-left: 0;
 }
 
 .series-list li {
   display: flex;
   gap: 1.25rem;
+  margin: 0;
   padding: 1.25rem 0;
   border-top: 1px solid var(--border);
 }
