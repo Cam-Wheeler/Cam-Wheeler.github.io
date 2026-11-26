@@ -17,8 +17,6 @@ Banks operating in the UK are required by regulators to screen every transaction
 
 The core challenge: sanctioned individuals actively try to evade detection, the volume of transactions is enormous, and the cost of missing one is severe. The system needs to be fast, accurate, auditable, and resilient.
 
-Want to check out the code: [press here](https://github.com/Cam-Wheeler/Sanction_Monitor)
-
 ## System Architecture
 
 The pipeline is broken into discrete stages connected by Kafka topics, so each component can fail, scale, and evolve independently.

@@ -10,7 +10,7 @@ title: Home
     <h2>About Me</h2>
     <p>I'm a PhD researcher at The University of Edinburgh building explainable multi-organ segmentation pipelines for PET/CT oncology imaging 🩻. My supervisors are Prof. Adriana Tavares and Dr. Eleonora D'Arnese. My work focuses on closing the gap between benchmark performance and real clinical utility in medical image analysis. We aim to build the next generation of multi-organ segmentation systems.</p>
     <p style="margin-top: 2rem;">Alongside my research, I'm a Teaching Assistant for three courses:</p>
-    <ul style="color: var(--text-secondary); margin-bottom: 1rem;">
+    <ul style="margin-bottom: 1rem;">
       <li>☁️ <strong>Applied Cloud Programming</strong> — Where I teach how we can build cloud-native systems using tools like Kafka and Flink!</li>
       <li>👀 <strong>Computer Vision</strong> — Where I am often developing baseline code for student coursework.</li>
       <li>💻 <strong>Informatics Large Practical</strong> — Where we cover topics like REST APIs, Docker, and standard development practice like testing!</li>
@@ -106,7 +106,7 @@ title: Home
 <section id="contact" class="section">
   <div class="container">
     <h2>Get In Touch</h2>
-    <p>Interested in working together? Feel free to reach out.</p>
+    <p style="margin-bottom: 1.5rem;">Interested in working together? Feel free to reach out.</p>
     <a href="mailto:Cam.Wheeler@ed.ac.uk" class="btn">Email Me</a>
   </div>
 </section>
